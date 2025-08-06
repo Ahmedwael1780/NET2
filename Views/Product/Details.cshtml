@@ -1,0 +1,43 @@
+﻿@model Net2.Models.Product
+
+@{
+    ViewData["Title"] = "Product Details";
+}
+
+<div class="container mt-4">
+    <div class="card">
+        <div class="card-header bg-primary text-white">
+            <h4>Product Details</h4>
+        </div>
+        <div class="card-body">
+            <dl class="row">
+                <dt class="col-sm-3">@Html.DisplayNameFor(model => model.Title)</dt>
+                <dd class="col-sm-9">@Html.DisplayFor(model => model.Title)</dd>
+
+                <dt class="col-sm-3">@Html.DisplayNameFor(model => model.Price)</dt>
+                <dd class="col-sm-9">@Html.DisplayFor(model => model.Price)</dd>
+
+                <dt class="col-sm-3">@Html.DisplayNameFor(model => model.Quantity)</dt>
+                <dd class="col-sm-9">@Html.DisplayFor(model => model.Quantity)</dd>
+
+                <dt class="col-sm-3">@Html.DisplayNameFor(model => model.Category)</dt>
+                <dd class="col-sm-9">@Html.DisplayFor(model => model.Category.Name)</dd>
+
+                <dt class="col-sm-3">@Html.DisplayNameFor(model => model.Description)</dt>
+                <dd class="col-sm-9">@Html.DisplayFor(model => model.Description)</dd>
+
+              @*   @if (!string.IsNullOrEmpty(Model.ImagePath))
+                {
+                    <dt class="col-sm-3">Image</dt>
+                    <dd class="col-sm-9">
+                        <img src="@Model.ImagePath" alt="Product Image" class="img-thumbnail" style="max-width: 200px;" />
+                    </dd>
+                } *@
+            </dl>
+        </div>
+        <div class="card-footer">
+            <a asp-action="Edit" asp-route-id="@Model.ProductId" class="btn btn-warning">Edit</a>
+            <a asp-action="Index" class="btn btn-secondary">Back to List</a>
+        </div>
+    </div>
+</div>
